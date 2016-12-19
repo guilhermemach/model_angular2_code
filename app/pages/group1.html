@@ -1,0 +1,22 @@
+<div id="banner">
+	<h2>Group1!</h2>
+	<p>
+	 <span><a (click) = "getAllCustomers()">get all customers</a></span>
+	</p>
+</div>
+
+<div *ngIf="loading">
+	    <p><span>loading..........</span></p>
+</div>
+
+<div *ngIf="errorMessage">
+	    <p><span>{{errorMessage}}</span></p>
+</div>
+
+
+<div *ngFor="let customer of customers">
+	    <p><span>{{customer.name}} - {{customer.surname}}</span></p>
+</div>
+<p>
+	<span><a (click) = "cleanCustomersList()">clean</a></span>
+</p>

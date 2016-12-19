@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Minimaxing by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="app/css/main.css">
+
+    <!-- 1. Load libraries -->
+     <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+    <!-- Scripts -->
+    <script src="app/js/jquery.min.js"></script>
+    <script src="app/js/skel.min.js"></script>
+    <script src="app/js/skel-viewport.min.js"></script>
+    <script src="app/js/util.js"></script>
+    <script src="app/js/main.js"></script>
+
+    <!-- 2. Configure SystemJS -->
+    <script src="systemjs.config.js"></script>
+    <script>
+      System.import('app').catch(function(err){ console.error(err); });
+    </script>
+
+    <base href="/">
+
+    </head>
+    <!-- 3. Display the application -->
+
+    <body>
+        <index></index>
+    </body>
+
+</html>
