@@ -12,30 +12,35 @@ var core_1 = require('@angular/core');
 var customer_1 = require('../services/customer');
 var customer_service_1 = require('../services/customer.service');
 var router_1 = require('@angular/router');
+// angular2 cookie
+var core_2 = require('angular2-cookie/core');
 var LoginComponent = (function () {
-    function LoginComponent(customerService, router) {
+    function LoginComponent(customerService, router, cookieService) {
         this.customerService = customerService;
         this.router = router;
+        this.cookieService = cookieService;
         console.log('LoginComponent running....');
         this.model = new customer_1.Customer(0, '', '', '', '');
     }
     LoginComponent.prototype.onSubmit = function () {
-        var _this = this;
-        this.customerService.add(this.model).subscribe(function (response) { return _this.modelResponse = response; }, function (error) { return _this.errorMessage = error; });
-        console.log('customer = ' + this.modelResponse);
-        if (this.modelResponse == undefined) {
-            console.log('erro = ' + this.errorMessage);
-            this.router.navigate(['/home']);
-        }
-        else {
-            console.log('cadastro ok');
-        }
+        // this.customerService.add(this.model).subscribe(response => this.modelResponse = response, error =>  this.errorMessage = <any>error);
+        // console.log('customer = '+ this.modelResponse );
+        /*   if(this.modelResponse == undefined){
+                console.log('erro = '+this.errorMessage );
+                this.router.navigate(['/home']);
+           }   else{
+                console.log('cadastro ok');
+           }
+        */
+        /* Set Cokkie */
+        this.cookieService.put('currentUser', 'userTest');
+        this.router.navigate(['/home']);
     };
     LoginComponent = __decorate([
         core_1.Component({
             templateUrl: 'app/pages/login.html'
         }), 
-        __metadata('design:paramtypes', [customer_service_1.CustomerService, router_1.Router])
+        __metadata('design:paramtypes', [customer_service_1.CustomerService, router_1.Router, core_2.CookieService])
     ], LoginComponent);
     return LoginComponent;
 }());

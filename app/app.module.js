@@ -19,6 +19,7 @@ var login_component_1 = require('./component/login.component');
 var authguard_component_1 = require('./component/authguard.component');
 var http_1 = require('@angular/http');
 var customer_service_1 = require('./services/customer.service');
+var core_2 = require('angular2-cookie/core');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -26,13 +27,13 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, router_1.RouterModule.forRoot([
                     { path: '', component: home_component_1.HomeComponent, canActivate: [authguard_component_1.AuthGuard] },
-                    { path: 'home', component: home_component_1.HomeComponent },
-                    { path: 'group1', component: group1_component_1.Group1Component },
+                    { path: 'home', component: home_component_1.HomeComponent, canActivate: [authguard_component_1.AuthGuard] },
+                    { path: 'group1', component: group1_component_1.Group1Component, canActivate: [authguard_component_1.AuthGuard] },
                     { path: 'login', component: login_component_1.LoginComponent }
                 ]),
             ],
             declarations: [home_component_1.HomeComponent, group1_component_1.Group1Component, index_component_1.IndexComponent, login_component_1.LoginComponent],
-            providers: [authguard_component_1.AuthGuard, customer_service_1.CustomerService],
+            providers: [authguard_component_1.AuthGuard, customer_service_1.CustomerService, core_2.CookieService],
             bootstrap: [index_component_1.IndexComponent]
         }), 
         __metadata('design:paramtypes', [])

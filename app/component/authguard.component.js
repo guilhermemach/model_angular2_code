@@ -10,13 +10,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
+var core_2 = require('angular2-cookie/core');
 var AuthGuard = (function () {
-    function AuthGuard(router) {
+    function AuthGuard(router, cookieServer) {
         this.router = router;
+        this.cookieServer = cookieServer;
     }
     AuthGuard.prototype.canActivate = function () {
-        if (localStorage.getItem('currentUser')) {
-            // logged in so return true
+        if (this.cookieServer.get('currentUser')) {
+            console.log(this.cookieServer.get('currentUser'));
             return true;
         }
         // not logged in so redirect to login page
@@ -25,7 +27,7 @@ var AuthGuard = (function () {
     };
     AuthGuard = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [router_1.Router])
+        __metadata('design:paramtypes', [router_1.Router, core_2.CookieService])
     ], AuthGuard);
     return AuthGuard;
 }());
