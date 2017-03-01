@@ -13,16 +13,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var customer_service_1 = require('../services/customer.service');
-var generic_component_1 = require('../component/generic.component');
+var core_1 = require("@angular/core");
+var customer_service_1 = require("../services/customer.service");
+var generic_component_1 = require("../component/generic.component");
 var Group1Component = (function (_super) {
     __extends(Group1Component, _super);
     function Group1Component(customerService) {
-        _super.call(this);
-        this.customerService = customerService;
-        this.customers = [];
+        var _this = _super.call(this) || this;
+        _this.customerService = customerService;
+        _this.customers = [];
         console.log('Group1Component cached...');
+        return _this;
     }
     Group1Component.prototype.getAllCustomers = function () {
         var _this = this;
@@ -36,13 +37,13 @@ var Group1Component = (function (_super) {
     Group1Component.prototype.cleanCustomersList = function () {
         this.customers = [];
     };
-    Group1Component = __decorate([
-        core_1.Component({
-            templateUrl: 'app/pages/group1.html'
-        }), 
-        __metadata('design:paramtypes', [customer_service_1.CustomerService])
-    ], Group1Component);
     return Group1Component;
 }(generic_component_1.GenericComponent));
+Group1Component = __decorate([
+    core_1.Component({
+        templateUrl: 'app/pages/group1.html'
+    }),
+    __metadata("design:paramtypes", [customer_service_1.CustomerService])
+], Group1Component);
 exports.Group1Component = Group1Component;
 //# sourceMappingURL=group1.component.js.map

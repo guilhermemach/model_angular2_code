@@ -8,12 +8,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var customer_1 = require('../services/customer');
-var customer_service_1 = require('../services/customer.service');
-var router_1 = require('@angular/router');
+var core_1 = require("@angular/core");
+var customer_1 = require("../services/customer");
+var customer_service_1 = require("../services/customer.service");
+var router_1 = require("@angular/router");
 // angular2 cookie
-var core_2 = require('angular2-cookie/core');
+var core_2 = require("angular2-cookie/core");
 var LoginComponent = (function () {
     function LoginComponent(customerService, router, cookieService) {
         this.customerService = customerService;
@@ -36,13 +36,13 @@ var LoginComponent = (function () {
         this.cookieService.put('currentUser', 'userTest');
         this.router.navigate(['/home']);
     };
-    LoginComponent = __decorate([
-        core_1.Component({
-            templateUrl: 'app/pages/login.html'
-        }), 
-        __metadata('design:paramtypes', [customer_service_1.CustomerService, router_1.Router, core_2.CookieService])
-    ], LoginComponent);
     return LoginComponent;
 }());
+LoginComponent = __decorate([
+    core_1.Component({
+        templateUrl: 'app/pages/login.html'
+    }),
+    __metadata("design:paramtypes", [customer_service_1.CustomerService, router_1.Router, core_2.CookieService])
+], LoginComponent);
 exports.LoginComponent = LoginComponent;
 //# sourceMappingURL=login.component.js.map

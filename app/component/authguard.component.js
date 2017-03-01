@@ -8,9 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var core_2 = require('angular2-cookie/core');
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var core_2 = require("angular2-cookie/core");
 var AuthGuard = (function () {
     function AuthGuard(router, cookieServer) {
         this.router = router;
@@ -25,11 +25,11 @@ var AuthGuard = (function () {
         this.router.navigate(['/login']);
         return false;
     };
-    AuthGuard = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [router_1.Router, core_2.CookieService])
-    ], AuthGuard);
     return AuthGuard;
 }());
+AuthGuard = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [router_1.Router, core_2.CookieService])
+], AuthGuard);
 exports.AuthGuard = AuthGuard;
 //# sourceMappingURL=authguard.component.js.map

@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 var $ = require('../js/jquery.min.js');
 var IndexComponent = (function () {
     function IndexComponent(element) {
@@ -36,14 +36,14 @@ var IndexComponent = (function () {
         $('#titleBar').append('<span class="title">Menu</span>');
     };
     ;
-    IndexComponent = __decorate([
-        core_1.Component({
-            selector: 'index',
-            templateUrl: 'app/pages/index.html'
-        }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
-    ], IndexComponent);
     return IndexComponent;
 }());
+IndexComponent = __decorate([
+    core_1.Component({
+        selector: 'index',
+        templateUrl: 'app/pages/index.html'
+    }),
+    __metadata("design:paramtypes", [core_1.ElementRef])
+], IndexComponent);
 exports.IndexComponent = IndexComponent;
 //# sourceMappingURL=index.component.js.map
